@@ -34,6 +34,10 @@ RUN sed -i 's/Define DISP_LOG_LEVEL info/Define DISP_LOG_LEVEL debug/' /etc/http
 RUN sed -i 's/PUBLISH_FORCE_SSL 1/PUBLISH_FORCE_SSL 0/' /etc/httpd/conf.d/variables/ams_default.vars \
   && sed -i 's/AUTHOR_FORCE_SSL 1/AUTHOR_FORCE_SSL 0/' /etc/httpd/conf.d/variables/ams_default.vars
 
+COPY copy_enabled_farms.sh /etc/httpd/conf.dispatcher.d/enabled_farms
+RUN chmod 777 /etc/httpd/conf.dispatcher.d/enabled_farms
+RUN ./etc/httpd/conf.dispatcher.d/enabled_farms/copy_enabled_farms.sh
+
 # create cache directories
 RUN mkdir /var/www/author && chown -R apache /var/www/author
 RUN mkdir /var/www/default && chown -R apache /var/www/default

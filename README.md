@@ -9,7 +9,7 @@ This repository comes with a baseline dispatcher configuration for a site titled
 
 ### Setup
 
-Modify your `/etc/hosts` file (or `C:\Windows\System32\Drivers\etc\hosts` if using Windows) and add the following entries:
+Modify your `/etc/hosts` file to add the following entries:
 ```
 127.0.0.1 aem-publish.local
 127.0.0.1 aem-author.local
@@ -35,3 +35,8 @@ docker run -it -p 80:80 ams-dispatcher
 You should now be able to hit the above configured hosts: 
 * Publish - [http://aem-publish.local/content/we-retail/us/en.html](http://aem-publish.local/content/we-retail/us/en.html) 
 * Author - [http://aem-author.local/editor.html/content/we-retail/us/en.html](http://aem-author.local/editor.html/content/we-retail/us/en.html)
+
+
+#### Additional Notes
+
+This Docker image has only been tested on macOS and may not yet work on Windows

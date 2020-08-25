@@ -9,11 +9,13 @@ This repository comes with a baseline dispatcher configuration for a site titled
 
 ### Setup
 
-Modify your `/etc/hosts` file to add the following entries:
+1. Modify your `/etc/hosts` file to add the following entries:
 ```
 127.0.0.1 aem-publish.local
 127.0.0.1 aem-author.local
 ```
+
+2. Add the provided `Dockerfile` and `envvars` files to your project's `dispatcher/src` folder
 
 ### Build
 
@@ -27,7 +29,9 @@ docker build -t ams-dispatcher .
 
 * Ensure you have an AEM author instance running on [localhost:4502](http://localhost:4502)
 * Ensure you have an AEM publish instance running on [localhost:4503](http://localhost:4503)
-* Ensure you don't already have a local Apache server running on port 80. If so, stop it before running this docker image: 
+* Ensure you don't already have a local web server running on port 80. If so, stop it before proceeding.
+
+Run the Docker image:
 ```
 docker run -it -p 80:80 ams-dispatcher
 ```

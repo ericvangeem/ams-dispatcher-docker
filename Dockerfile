@@ -28,7 +28,7 @@ RUN ln -s /etc/httpd/modules/dispatcher-apache2.*.so /etc/httpd/modules/mod_disp
 # RUN chmod 644 /etc/httpd/modules/mod_dispatcher.so
 
 # enable dispatcher debug logging
-RUN sed -i 's/Define DISP_LOG_LEVEL info/Define DISP_LOG_LEVEL debug/' /etc/httpd/conf.d/variables/ams_default.vars
+RUN sed -i 's/Define DISP_LOG_LEVEL info/Define DISP_LOG_LEVEL trace/' /etc/httpd/conf.d/variables/ams_default.vars
 
 # disable SSL on author and publish instances
 RUN sed -i 's/PUBLISH_FORCE_SSL 1/PUBLISH_FORCE_SSL 0/' /etc/httpd/conf.d/variables/ams_default.vars \

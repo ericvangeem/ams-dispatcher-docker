@@ -41,6 +41,14 @@ You should now be able to hit the above configured hosts:
 * Author - [http://aem-author.local/editor.html/content/we-retail/us/en.html](http://aem-author.local/editor.html/content/we-retail/us/en.html)
 
 
-#### Additional Notes
+### Additional Notes
+
+#### Configure Dispatcher Flush Agent
+
+Enable your [author](http://localhost:4502/etc/replication/agents.author/flush.html) or [publish](http://localhost:4503/etc/replication/agents.publish/flush.html) flush agent with a transport URI of `http://aem-publish.local:80/dispatcher/invalidate.cache` to ensure cached files are invalidated upon activation.
+
+![Flush agent config](docs/media/flush-agent.png)
+
+#### Limitations
 
 This Docker image has only been tested on macOS and may not yet work on Windows

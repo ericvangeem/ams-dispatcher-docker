@@ -47,7 +47,7 @@ You should now be able to hit the above configured hosts:
 
 Enable your [author](http://localhost:4502/etc/replication/agents.author/flush.html) or [publish](http://localhost:4503/etc/replication/agents.publish/flush.html) flush agent with a transport URI of `http://aem-publish.local:80/dispatcher/invalidate.cache` to ensure cached files are invalidated upon activation.
 
-![Flush agent config](docs/media/flush-agent.png)
+<img src="docs/media/flush-agent.png" alt="Flush agent config" width="530">
 
 #### Limitations
 
